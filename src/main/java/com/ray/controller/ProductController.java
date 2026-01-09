@@ -12,7 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+// 👇 Paste your specific Vercel link here
+@CrossOrigin(origins = "https://ray-shop-frontend.vercel.app", allowCredentials = "true")
 @RestController
 @RequestMapping("/api")
 public class ProductController {
