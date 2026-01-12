@@ -77,9 +77,10 @@ private ProductService service;
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
-    public ResponseEntity<List<Product>> searchProducts(String keyword){
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword){ // 👈 Add @RequestParam
+        System.out.println("Searching with " + keyword); // Optional: helps with debugging logs
         List<Product> products = service.searchProducts(keyword);
         return new ResponseEntity<>(products, HttpStatus.OK);
-
     }
 }
